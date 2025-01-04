@@ -21,5 +21,8 @@ for i in range(len(data)):
     
 #cur.execute(f"INSERT INTO user VALUES({data[i]['gender']}, '{data[i]['name']['first']}', '{data[i]['location']['coordinates']['latitude']}', {data[i]['location']['coordinates']['longitude']})")
 
+res = cur.execute("SELECT gender, first, lat, long FROM user")
+print(res.fetchall())
+
 con.commit()
 con.close()
